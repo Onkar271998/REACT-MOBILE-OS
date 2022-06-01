@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { Head, Categories }  from './components/list';
 function App() {
+  
+  let info1 = [
+    { name:"Android" },
+    { name:"Blackberry" },
+    { name:"iPhone" },
+    { name:"Windows Phone" }
+  ];
+  let info2 = [
+    { name:"Samsung" },
+    { name:"Htc" },
+    { name:"Micromax" },
+    { name:"Apple" }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="pp">
+      <Head value="Opertaing System" />
+      {info1.map((list) => (
+          <Categories {...list}/>
+      ))}
+      
+      <Head value="Manufactures"/>
+      {info2.map((list2) => (
+        <Categories {...list2}/>
+      ))}
     </div>
   );
 }
